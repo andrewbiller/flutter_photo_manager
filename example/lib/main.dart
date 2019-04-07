@@ -124,7 +124,7 @@ class _MyAppState extends State<MyApp> {
 
   Widget _buildPreview(AssetEntity asset) {
     return FutureBuilder<Uint8List>(
-      future: asset.thumbDataWithSize(200, 200),
+      future: asset?.thumbDataWithSize(200, 200),
       builder: (BuildContext context, AsyncSnapshot<Uint8List> snapshot) {
         if (snapshot.data != null) {
           return Image.memory(snapshot.data);
